@@ -197,7 +197,7 @@ def run_evaluation(file_paths, cache_size=50, use_optimized=False, params_file="
     print(f"RESULTS SAVED TO: {json_output_path}")
     print("="*80)
     print("JSON Contents:")
-    print(json.dumps(results_json, indent=2))
+    json.dumps(results_json, indent=2)
     print("\n" + "="*80)
 
 
