@@ -8,12 +8,9 @@ class Cache(object):
         , terms=[10, 100, 1000]
 
         # Features. Available 'Base', 'UT', and 'CT'
-        # Refer to the report for what they mean
         , feature_selection=('Base',)
 
-        # Reward functions. Here are the default params
-        # 1. Zhong et. al. - (name='zhong', short_reward=1.0, long_span=100, beta=0.5)
-        # 2. Ours - (name='our', alpha=0.5, psi=10, mu=1, beta=0.3), let psi=0 to remove penalty
+        # Reward function
         , reward_params=dict(name='our', alpha=0.5, psi=10, mu=1, beta=0.3)
                  
         # leave none for random read/writes
@@ -73,7 +70,7 @@ class Cache(object):
             self.n_features += self.cache_size
         if 'CT' in self.sel_features:
             self.n_features += self.cache_size
-        # ... we've removed CS feature
+
 
     # Display the current cache state
     def display(self):
